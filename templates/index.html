@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Prediction</title>
+</head>
+<body>
+    <div style="color:blue">
+
+        <form action="{{ url_for('predict') }}" method='POST'>
+
+          <h1 style='text-align:center'>Predictive Analysis</h1>
+          <h3>Year: <input id='year' name='Year_of_the_Car' type='number'></h3>
+          <h3>What is the current show room price in Lacs: <input id='Present_price'   name='Present_Price' required="required"></h3>
+          <h3>How many kilometers car drived? : <input id='kms_driven' name='Kms_Driven' required="required"></h3>
+          <h3>How much owners previously had the car 0 or 1 or 3: <input id='owner_name' name='No_of_Owners' required="required"> </h3>
+          <h3>What is the fuel type of the vehicle? :
+              <select name ='Fuel_Type_Petrol' id='fuel' required='required'>
+                  <option value="Petrol">Petrol</option>
+                  <option value="Diesel">Diesel</option>
+                  <option value="CNG">CNG</option>
+              </select>
+          </h3>
+          <h3>Are you a Dealer or Individual? :
+              <select name ='Seller_Type_Individual' id='resea' required='required'>
+                  <option value='Dealer'>Dealer</option>
+                  <option value='Individual'>Individual</option>
+              </select>
+          </h3>
+          <h3>Transmission Type :
+              <select name ='Transmission_Manual' id='research' required='required'>
+                  <option value='Manual'>Manual Car</option>
+                  <option value='Automatic'>Automatic Car</option>
+              </select>
+          </h3>
+          <br><br>
+          <div class='center'>
+            <button id='sub' type='submit'>Calculate the selling price</button>
+          </div>
+          <br>
+
+        </form>
+        <br><br>
+        <h3> {{ prediction_text }}</h3>
+
+
+    </div>
+
+
+    <style>
+       .center {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              height: 100px;
+       }
+    </style>
+</body>
+
+</html>
